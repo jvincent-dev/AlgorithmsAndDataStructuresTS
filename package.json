@@ -1,0 +1,16 @@
+{
+  "name": "algorithms-and-data-structures-ts",
+  "version": "0.0.1",
+  "description": "Typescript Algorithms and Data Structures",
+  "main": "index.js",
+  "scripts": {
+    "start": "tsc && node ./lib/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "jvincent-dev",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^4.5.5"
+  }
+}
