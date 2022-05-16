@@ -2,10 +2,12 @@
 export class GraphNode<T> {
   label: T;
   children: Set<GraphNode<T>>;
+  weights: Map<T, number | undefined>;
 
   constructor(label: T) {
     this.label = label;
     this.children = new Set();
+    this.weights = new Map();
   }
 }
 
@@ -43,7 +45,7 @@ export default class Graph<T> {
     }
   }
 
-  addEdge(source: GraphNode<T>, destination: GraphNode<T>): void {
+  addEdge(source: GraphNode<T>, destination: GraphNode<T>, weight: number | undefined): void {
     const edgeExists = source.children.has(destination);
 
     if (source === destination || edgeExists) {
@@ -61,6 +63,7 @@ export default class Graph<T> {
       this.nodes.add(destination);
     }
 
+    source.weights.set(destination.label, weight);
     source.children.add(destination);
   }
 
